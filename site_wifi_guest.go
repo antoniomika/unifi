@@ -34,15 +34,15 @@ func (c *Client) AuthorizeWiFiGuest(site string, mac string, duration time.Durat
 	}
 	// optionally each parameter if non-zero
 	if wifiGuestConfig != nil {
-		if wifiGuestConfig.UploadSpeed >= 0 {
+		if wifiGuestConfig.UploadSpeed > 0 {
 			payload["up"] = wifiGuestConfig.UploadSpeed
 		}
 
-		if wifiGuestConfig.DownloadSpeed >= 0 {
+		if wifiGuestConfig.DownloadSpeed > 0 {
 			payload["down"] = wifiGuestConfig.DownloadSpeed
 		}
 
-		if wifiGuestConfig.TransferLimit >= 0 {
+		if wifiGuestConfig.TransferLimit > 0 {
 			payload["bytes"] = wifiGuestConfig.TransferLimit
 		}
 
